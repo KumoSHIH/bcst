@@ -15,11 +15,11 @@ export default {
         // console.log(posTop);
         if(scrollAfter > (posTop / 2)) {
           // console.log('in');
-          img.css('transform', `translateY(-${(scrollAfter - imgH) * 0.25}px)`);
-          if(scrollAfter > (posTop + (imgH / 2))) {
-            // console.log('out');
-            img.css('transform', `translateY(-${(posTop + (imgH / 2)) * 0.25}px)`);
-          }
+          img.css('transform', `translateY(-${(scrollAfter) * 0.1}px)`);
+          // if(scrollAfter > (posTop + (imgH / 2))) {
+          //   // console.log('out');
+          //   img.css('transform', `translateY(-${(posTop + (imgH / 2)) * 0.1}px)`);
+          // }
         }
       })
       zero = scrollAfter;
