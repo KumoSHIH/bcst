@@ -1,10 +1,15 @@
 <script setup>
+import { onMounted, ref } from 'vue';
+import { homeData } from '../data.js';
 import parallax from '@/tools/parallax.js';
-import { onMounted } from 'vue';
+
+const dataArr = ref(homeData);
+const data = dataArr.value
 
 onMounted(() => {
   parallax.scroll();
 })
+
 </script>
 
 <template>
@@ -65,13 +70,15 @@ onMounted(() => {
       </div>
     </section>
     <!-- section 3 -->
-    <section>
+    <section class="section3">
       <h6 class="sub-tit">STORY</h6>
-      <div class="row4">
-        <div class="block-item">
-          <div class="photo"></div>
-          <div>
-            <h6></h6>
+      <div class="flex max-w-[1520px] justify-between mx-auto pb-[200px]">
+        <div class="item-box w-full max-w-[340px]" v-for="(item,i) in data" :key="i">
+          <div class="photo ">
+            <img :src= item.photo class="ab-center" alt="">
+          </div>
+          <div class="mask ab-center flex-center">
+            <h6 class="text-white text-lg font-Noto">{{ item.title }}</h6>
             <p></p>
           </div>
         </div>
@@ -132,7 +139,51 @@ onMounted(() => {
   // section2
   .section2 {
     .scroll-container {
-      padding-bottom: 106%;
+      padding-bottom: 110%;
     }
+  }
+  // section3
+  .section3 {
+    .item-box {
+      position: relative;
+      transition: margin .3s ease-in-out;
+      &:nth-child(2) {
+        transform: translateY(200px)
+      }
+      &:nth-child(4) {
+        transform: translateY(120px)
+      }
+      &:hover {
+        margin-top: -20px;
+        margin-bottom: 20px;
+        .mask {
+          background-color: rgba(0,0,0,0.3);
+        }
+        h6 {
+          opacity: 1;
+        }
+      }
+    }
+    .photo {
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 126%;
+    }
+    .mask {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+      transition: background-color .3s ease-in-out;
+      h6 {
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+      }
+    };
+
+  }
+  // section4
+  .section4 {
+    
   }
 </style>

@@ -1,30 +1,31 @@
-<script>
+<script setup>
+import { onMounted } from "@vue/runtime-core";
 import $ from "jquery";
 
-export default {
-  scroll() {
-    let zero = 0;
-    $(window).on('scroll',function() {
-      let scrollAfter = $(this).scrollTop();
+let scroll = () => {
+  let zero = 0;
+  $(window).on('scroll',function() {
+    let scrollAfter = $(this).scrollTop();
 
-      console.log(scrollAfter);
-
-    })
-  }
-
+    zero = scrollAfter
+  })
 }
+
+onMounted(() => {
+  scroll();
+})
 </script>
 <template>
   <nav class="fixed w-full py-3 px-10 z-[10]">
     <div class="flex justify-between items-center">
-      <router-link to="/" class="logo">
-        <img src="@/assets/images/logo_main.png" alt="">
-      </router-link>
       <ul class="flex">
         <li><router-link to="" class="hd-link font-Playfair">Product</router-link></li>
         <li><router-link to="" class="hd-link font-Playfair">News</router-link></li>
         <li><router-link to="" class="hd-link font-Playfair">Cart</router-link></li>
       </ul>
+      <router-link to="/" class="logo">
+        <img src="@/assets/images/logo_main.png" alt="">
+      </router-link>
     </div>
   </nav>
 </template>
@@ -36,7 +37,7 @@ export default {
     transition: .3s ease-in-out;
   }
   .logo {
-    max-width: 100px;
+    max-width: 80px;
     width: 100%;
   }
 </style>

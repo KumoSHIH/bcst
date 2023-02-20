@@ -2,3 +2,8 @@
 .ab-center {
   @apply absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%];
 }
+
+// flex center {
+.flex-center {
+  @apply flex justify-center items-center
+}
