@@ -1,13 +1,20 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import axios from 'axios';
 import { homeData } from '../data.js';
 import parallax from '@/tools/parallax.js';
 
-const dataArr = ref(homeData);
-const data = dataArr.value
+const data = homeData;
 
+let getData = () => {
+  let api = 'https://randomuser.me/api/';
+  axios.get(api).then((res)=> {
+    console.log(res.data);
+  })
+}
 onMounted(() => {
   parallax.scroll();
+  getData()
 })
 
 </script>

@@ -1,14 +1,14 @@
-# vite
+# BCST 形象網站
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## 使用技術
+<ul>
+  <li>Vue3</li>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+</ul>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
