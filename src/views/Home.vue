@@ -1,16 +1,19 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import axios from 'axios';
 import { homeData } from '../data.js';
 import parallax from '@/tools/parallax.js';
 
-const data = homeData;
+const data = reactive([]);
 
-let getData = () => {
+let getData = async() => {
   let api = 'https://randomuser.me/api/';
-  axios.get(api).then((res)=> {
-    console.log(res.data);
-  })
+
+  const res = await axios.get(api);
+
+  Object.assign(data, res.data)
+
+  console.log(data);
 }
 onMounted(() => {
   parallax.scroll();
@@ -80,7 +83,7 @@ onMounted(() => {
     <section class="section3">
       <h6 class="sub-tit">STORY</h6>
       <div class="flex max-w-[1520px] justify-between mx-auto pb-[200px]">
-        <div class="item-box w-full max-w-[340px]" v-for="(item,i) in data" :key="i">
+        <div class="item-box w-full max-w-[340px]" v-for="(item,i) in homeData" :key="i">
           <div class="photo ">
             <img :src= item.photo class="ab-center" alt="">
           </div>
