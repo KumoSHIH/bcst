@@ -15,6 +15,7 @@ let getData = async() => {
 
   console.log(data);
 }
+
 onMounted(() => {
   parallax.scroll();
   getData()
