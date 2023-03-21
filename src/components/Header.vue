@@ -20,7 +20,8 @@ onMounted(() => {
     <div class="flex justify-between items-center">
       <ul class="flex">
         <li><router-link to="" class="hd-link font-Playfair">Product</router-link></li>
-        <li><router-link to="" class="hd-link font-Playfair">News</router-link></li>
+        <li><router-link to="/news" class="hd-link font-Playfair">News</router-link></li>
+        <li><router-link to="/reservation" class="hd-link font-Playfair">Reservation</router-link></li>
         <li><router-link to="" class="hd-link font-Playfair">Cart</router-link></li>
       </ul>
       <router-link to="/" class="logo">

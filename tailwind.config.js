@@ -6,6 +6,20 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      xs: '360px',
+      sm: '600px',
+      md: '768px',
+    }
   },
-  plugins: [],
+  plugins: [
+    require('@fullhuman/postcss-purgecss')({
+      content: [
+        './**/*.html',
+        './**/*.pug',
+        './**/*.vue',
+      ],
+      defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+    })
+  ],
 }

@@ -16,6 +16,16 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: () => import('../views/News.vue')
+    },
+    {
+      path: '/reservation',
+      name: 'reservation',
+      component: () => import('../views/Reservation.vue')
     }
   ]
 })
