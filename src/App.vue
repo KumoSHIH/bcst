@@ -7,7 +7,7 @@ import './assets/scss/index.scss';
 </script>
 
 <template>
-  <!-- <Cursor /> -->
+  <Cursor />
   <Header />
   <RouterView />
   <Footer />

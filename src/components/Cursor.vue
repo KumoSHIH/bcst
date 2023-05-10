@@ -3,12 +3,13 @@ import { onMounted } from 'vue';
 
 const mouseMove = () => {
   const dot = document.querySelector('.dot'),
-        html = document.querySelector('html');
-
+        html = document.querySelector('html'),
+        dotW = dot.clientWidth / 2,
+        dotH = dot.clientHeight / 2;
+  
   html.addEventListener('mousemove',function(e){
-
-    dot.style.left = (e.pageX) + 'px';
-    dot.style.top = (e.pageY) + 'px';
+    dot.style.left = (e.pageX - dotW) + 'px';
+    dot.style.top = (e.clientY - dotH) + 'px';
   })
 }
 onMounted(() => {

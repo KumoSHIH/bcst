@@ -37,26 +37,14 @@ export default {
           <img src="@/assets/images/h01.jpg" alt="" data-scroll-obj>
         </div>
       </div>
-      <h2 class="mix-blend-color-dodge font-Playfair z-[1] m-[-30px] text-gray-300">
+      <h2 class="mix-blend-difference font-Playfair text-gray-300 m-[-30px] z-[1] relative">
         <p class="text-[100px] tracking-[6px]">DARING</p>
         <p class="text-[42px]">TO BE</p>
         <p class="text-[100px] tracking-[8px] break-all">DIFFERENT</p>
       </h2>
     </section>
     <!-- section 1 -->
-    <section class="section1 relative pb-10">
-      <div class="scroll-wrap max-w-[1440px] mx-auto">
-        <div class="scroll-container">
-          <img src="@/assets/images/bg1.jpg" alt="" data-scroll-obj>
-        </div>
-      </div>
-      <div class="ab-center w-100">
-        <h6 class="sub-tit">CONTACT US</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </div>
-    </section>
-    <!-- section 2 -->
-    <section class="section2 max-w-[1000px] mx-auto my-[100px]">
+    <section class="section2 max-w-[1000px] mx-auto py-[50px]">
       <h6 class="sub-tit">ABOUT BCST</h6>
       <div class="">
         <div class="flex items-center mb-[120px]">
@@ -85,25 +73,39 @@ export default {
         </div>
       </div>
     </section>
+    <!-- section 2 -->
+    <section class="section1 relative py-[50px]">
+      <div class="scroll-wrap max-w-[1440px] mx-auto">
+        <div class="scroll-container">
+          <img src="@/assets/images/bg1.jpg" alt="" data-scroll-obj>
+        </div>
+      </div>
+      <div class="ab-center w-100">
+        <h6 class="sub-tit">CONTACT US</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </section>
+    
     <!-- section 3 -->
-    <section class="section3">
+    <section class="section3 py-[50px]">
       <h6 class="sub-tit">STORY</h6>
-      <div class="flex max-w-[1520px] justify-between mx-auto pb-[200px]">
+      <div class="flex max-w-[1520px] justify-between mx-auto pt-[50px] pb-[200px]">
         <div class="item-box w-full max-w-[340px]" 
           v-for="(item,i) in homeData" 
           :key="i">
-          <div class="photo ">
+          <div class="photo">
             <img :src= item.photo class="ab-center" alt="">
           </div>
-          <div class="mask ab-center flex-center">
-            <h6 class="text-white text-lg font-Noto">{{ item.title }}</h6>
-            <p></p>
+          <div class="mask flex-col ab-center flex-center">
+            <h6 class="text-white text-xl font-Noto tracking-[1px]">{{ item.title }}</h6>
+            <div class="slash white hide"></div>
+            <p class="text-white tracking-[1px]">{{ item.description }}</p>
           </div>
         </div>
       </div>
     </section>
     <!-- section 4 -->
-    <section>
+    <section class="section4 py-[50px]">
       <h6 class="sub-tit">RESERVATION</h6>
       <div></div>
     </section>
@@ -169,7 +171,7 @@ export default {
         transform: translateY(200px)
       }
       &:nth-child(4) {
-        transform: translateY(120px)
+        transform: translateY(100px)
       }
       &:hover {
         margin-top: -20px;
@@ -177,8 +179,11 @@ export default {
         .mask {
           background-color: rgba(0,0,0,0.3);
         }
-        h6 {
+        h6, p {
           opacity: 1;
+        }
+        .slash::after{
+          height: 15px;
         }
       }
     }
@@ -193,7 +198,7 @@ export default {
       background-color: rgba(0,0,0,0.5);
       z-index: 1;
       transition: background-color .3s ease-in-out;
-      h6 {
+      h6, p {
         opacity: 0;
         transition: opacity .3s ease-in-out;
       }

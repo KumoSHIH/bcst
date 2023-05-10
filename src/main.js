@@ -10,6 +10,7 @@ import './index.css'
 
 const app = createApp(App)
 
-app.use(router).use(VueAxios, axios)
-
-app.mount('#app')
+app
+  .use(router)
+  .use(VueAxios, axios)
+  .mount('#app')

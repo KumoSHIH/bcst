@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div>
-    footer
-  </div>
+  <footer>
+    
+  </footer>
 </template>
 
 <style lang="scss">
